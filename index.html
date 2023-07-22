@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Keep Talking and Nobody Explodes</title>
+        <link rel="stylesheet" type="text/css" href="ktane.css" />
+    </head>
+
+    <body>
+        <nav>
+            <ul id="navList"></ul>
+        </nav>
+
+        <h1>Keep Talking and Nobody Explodes</h1>
+
+        <section id="sectionWires">
+            <h2>Wires</h2>
+
+            <ul id="wireOptions">
+                <li><button class="button red" data-colour="red"></button></li>
+                <li><button class="button yellow" data-colour="yellow"></button></li>
+                <li><button class="button blue" data-colour="blue"></button></li>
+                <li><button class="button white" data-colour="white"></button></li>
+                <li><button class="button black" data-colour="black"></button></li>
+            </ul>
+
+            <ul id="wireList"></ul>
+        </section>
+
+        <section id="sectionButton">
+            <h2>Button</h2>
+            <div>
+                Colour:
+                <input type="radio" name="buttonColour" value="blue" id="buttonColourBlue" checked /> <label for="buttonColourBlue" class="button blue">Blue</label>
+                <input type="radio" name="buttonColour" value="white" id="buttonColourWhite" /> <label for="buttonColourWhite" class="button white">White</label>
+                <input type="radio" name="buttonColour" value="yellow" id="buttonColourYellow" /> <label for="buttonColourYellow" class="button yellow">Yellow</label>
+                <input type="radio" name="buttonColour" value="red" id="buttonColourRed" /> <label for="buttonColourRed" class="button red">Red</label>
+            </div>
+            <div>
+                Text:
+                <input type="radio" name="buttonText" value="Abort" id="buttonTextAbort" checked /> <label for="buttonTextAbort">Abort</label>
+                <input type="radio" name="buttonText" value="Detonate" id="buttonTextDetonate" /> <label for="buttonTextDetonate">Detonate</label>
+                <input type="radio" name="buttonText" value="Hold" id="buttonTextHold" /> <label for="buttonTextHold">Hold</label>
+                <input type="radio" name="buttonText" value="Press" id="buttonTextPress" /> <label for="buttonTextPress">Press</label>
+            </div>
+            <div class="instruction"></div>
+            <div>
+                If holding button, release when the timer contains the digit that corresponds to the strip colour:
+                <ul>
+                    <li><span class="button blue">Blue</span>: &nbsp; 4</li>
+                    <li><span class="button yellow">Yellow</span>: 5</li>
+                    <li><span class="button">Other</span>: &nbsp;1</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sectionKeypads">
+            <h2>Keypads</h2>
+            <button class="jsResetSection">Reset</button>
+        </section>
+
+        <section id="sectionSimon">
+            <h2>Simon Says</h2>
+
+            <div id="simonInputs">
+                <input type="checkbox" id="simonVowel" /> <label for="simonVowel">Vowel</label>
+
+                <ul>
+                    <li>
+                        <input type="radio" name="simonStrikes" value="0" id="simonStrikes0" checked />
+                        <label for="simonStrikes0">0 strikes</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="simonStrikes" value="1" id="simonStrikes1" />
+                        <label for="simonStrikes1">1 strike</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="simonStrikes" value="2" id="simonStrikes2" />
+                        <label for="simonStrikes2">2 strikes</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="simonBoard">
+                <div class="simonRow">
+                    <div class="simonBlue">&nbsp;</div><div class="simonYellow">&nbsp;</div>
+                </div>
+                <div class="simonRow">
+                    <div class="simonRed">&nbsp;</div><div class="simonGreen">&nbsp;</div>
+                </div>
+                <div class="arrow" id="arrowRB"></div>
+                <div class="arrow" id="arrowBR"></div>
+                <div class="arrow" id="arrowBY"></div>
+                <div class="arrow" id="arrowYB"></div>
+                <div class="arrow" id="arrowYG"></div>
+                <div class="arrow" id="arrowGY"></div>
+                <div class="arrow" id="arrowGR"></div>
+                <div class="arrow" id="arrowRG"></div>
+                <div class="arrow" id="arrowRY"></div>
+                <div class="arrow" id="arrowYR"></div>
+                <div class="arrow" id="arrowBG"></div>
+                <div class="arrow" id="arrowGB"></div>
+            </div>
+        </section>
+
+        <section id="sectionWof">
+            <h2>Who's on First</h2>
+
+            <div><input type="text" id="wofInput" /></div>
+            <dl id="wofList"></dl>
+            <table id="wofTable"></table>
+        </section>
+
+        <section id="sectionMemory">
+            <h2>Memory</h2>
+            <button class="jsResetSection">Reset</button>
+            <table>
+                <tr>
+                    <th>Stage</th>
+                    <th>Display</th>
+                    <th>Pos.</th>
+                    <th>Label</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><input type="text" maxlength="1" id="stage_1_display" data-index="1"></td>
+                    <td><input type="text" maxlength="1" id="stage_1_pos" /></td>
+                    <td><input type="text" maxlength="1" id="stage_1_label" /></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><input type="text" maxlength="1" id="stage_2_display" data-index="2"></td>
+                    <td><input type="text" maxlength="1" id="stage_2_pos" /></td>
+                    <td><input type="text" maxlength="1" id="stage_2_label" /></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><input type="text" maxlength="1" id="stage_3_display" data-index="3"></td>
+                    <td><input type="text" maxlength="1" id="stage_3_pos" /></td>
+                    <td><input type="text" maxlength="1" id="stage_3_label" /></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><input type="text" maxlength="1" id="stage_4_display" data-index="4"></td>
+                    <td><input type="text" maxlength="1" id="stage_4_pos" /></td>
+                    <td><input type="text" maxlength="1" id="stage_4_label" /></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><input type="text" maxlength="1" id="stage_5_display" data-index="5"></td>
+                    <td><input type="text" maxlength="1" id="stage_5_pos" /></td>
+                    <td><input type="text" maxlength="1" id="stage_5_label" /></td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="sectionMorse">
+            <h2>Morse</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Freq</th>
+                    </tr>
+                </thead>
+                <tbody id="morseTable"></tbody>
+            </table>
+
+            <textarea id="morseInput" rows="7" cols="40"></textarea>
+        </section>
+
+        <section id="sectionSequence">
+            <h2>Wire Sequence</h2>
+            <ul id="sequenceOptions">
+                <li><button class="button red" data-colour="red" data-letter="A">A</button></li>
+                <li><button class="button blue" data-colour="blue" data-letter="A">A</button></li>
+                <li><button class="button black" data-colour="black" data-letter="A">A</button></li>
+                <li><button class="button red" data-colour="red" data-letter="B">B</button></li>
+                <li><button class="button blue" data-colour="blue" data-letter="B">B</button></li>
+                <li><button class="button black" data-colour="black" data-letter="B">B</button></li>
+                <li><button class="button red" data-colour="red" data-letter="C">C</button></li>
+                <li><button class="button blue" data-colour="blue" data-letter="C">C</button></li>
+                <li><button class="button black" data-colour="black" data-letter="C">C</button></li>
+            </ul>
+            <ul id="sequenceInstruction"></ul>
+        </section>
+
+        <section id="sectionVenn">
+            <h2>Venn Diagram</h2>
+            <ul id="vennOptions">
+                <li><input type="checkbox" id="vennRed" /> <label for="vennRed">Red</label></li>
+                <li><input type="checkbox" id="vennBlue" /> <label for="vennBlue">Blue</label></li>
+                <li><input type="checkbox" id="vennStar" /> <label for="vennStar">Star</label></li>
+                <li><input type="checkbox" id="vennLed" /> <label for="vennLed">LED</label></li>
+            </ul>
+            <div class="instruction"></div>
+        </section>
+
+        <section id="sectionVenn2">
+            <h2>Alternate Venn Diagram</h2>
+            <ul id="venn2Options">
+                <li><input type="checkbox" id="venn2SerialEven" /> <label for="venn2SerialEven">Serial number is even</label></li>
+                <li><input type="checkbox" id="venn2ParallelExists" /> <label for="venn2ParallelExists">A parallel port exists</label></li>
+                <li><input type="checkbox" id="venn2MultipleBatteries" /> <label for="venn2MultipleBatteries">More than one battery exists</label></li>
+            </ul>
+
+            <h3>Wires to cut:</h3>
+            <table id="venn2DoCut"></table>
+
+            <h3>Wires to <span class="red">not</span> cut:</h3>
+            <table id="venn2DoNotCut"></table>
+        </section>
+
+        <section id="sectionPasswords">
+            <h2>Passwords</h2>
+            <button class="jsResetSection">Reset</button>
+            <ul id="passwordOptions">
+                <li><input type="text" /></li>
+                <li><input type="text" /></li>
+                <li><input type="text" /></li>
+                <li><input type="text" /></li>
+                <li><input type="text" /></li>
+            </ul>
+            <table id="passwords"></table>
+        </section>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="ktane.js"></script>
+    </body>
+</html>
