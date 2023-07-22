@@ -1,3 +1,3 @@
-# ktane-helper
+# ktane-helper-fr
 
-https://dsinn.github.io/ktane-helper
+https://vavart.github.io/ktane-helper-fr/
